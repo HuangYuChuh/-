@@ -33,8 +33,8 @@
 
 ```bash
 # 1. 克隆或下载项目代码
-git clone https://github.com/HuangYuChuh/Zhi-Yi_Subtitle_Translator.git
-cd Zhi-Yi_Subtitle_Translator
+git clone https://github.com/HuangYuChuh/IntelliSubs_Translator.git
+cd IntelliSubs_Translator
 
 # 2. 创建并激活虚拟环境 (推荐)
 python3 -m venv venv
@@ -66,21 +66,21 @@ cp .env.example .env
 # 1. 克隆AI术语库项目
 git clone https://github.com/Social-Library/Artificial-Intelligence-Terminology-Database.git
 
-# 2. 运行脚本生成本地术语表
-python create_ai_glossary.py
+# 2. 运行脚本生成本地术语表 (在项目根目录执行)
+python src/create_ai_glossary.py
 ```
 
 ### 5. 执行翻译
 
 ```bash
 # (可选) 测试 API 是否连通
-python test_api.py
+python src/test_api.py
 
 # 翻译单个文件
-python translate_srt.py your_subtitle.srt
+python src/translate_srt.py your_subtitle.srt
 
 # 批量翻译一个文件夹内的所有 srt 文件
-python translate_srt_batch.py /path/to/your/subtitle_folder
+python src/translate_srt_batch.py /path/to/your/subtitle_folder
 ```
 
 翻译完成后，您会在同一个文件夹下看到一个名为 `*_cn.srt` 的新文件。
