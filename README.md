@@ -1,6 +1,6 @@
 # 🚀 智译字幕通 (IntelliSubs) - AI 字幕翻译工具
 
-[![许可证: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![许可证: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 版本](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 [![代码风格: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
@@ -123,7 +123,7 @@ python translate_srt_batch.py /path/to/your/subtitle_folder
 
 ## 📄 许可证 (License)
 
-本项目使用 MIT 许可证。详细信息请查阅 [LICENSE](LICENSE) 文件。
+本项目使用 Apache 2.0 许可证。详细信息请查阅 [LICENSE](LICENSE) 文件。
 
 ---
 
