@@ -45,4 +45,20 @@ Artificial-Intelligence-Terminology-Database/
 
 # 忽略编辑器目录
 # --------------------
+/.cursor/
+/rules/
+
+# 忽略本地克隆的Git仓库
+# ----------------------
+Artificial-Intelligence-Terminology-Database/
+
+# 忽略打包和分发目录
+# --------------------
+/dist/
+/build/
+*.egg-info/
+.eggs/
+
+# 忽略编辑器目录
+# --------------------
 /.cursor/ 
