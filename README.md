@@ -88,4 +88,14 @@ python translate_srt.py my_movie.srt -o /path/to/your/translated_subtitle.srt
 
 您可以在 `.env` 文件中设置 `DEFAULT_MODEL` 和 `DEFAULT_TEMPERATURE` 来更改脚本的默认行为，这样就不必每次都输入命令行参数。
 
-现在，您可以开始使用了！ 
+现在，您可以开始使用了！
+
+---
+
+## 致谢 (Acknowledgements)
+
+本项目的AI专业术语库功能，其数据源自于以下优秀的开源项目，特此感谢：
+
+-   **[Artificial-Intelligence-Terminology-Database](https://github.com/Social-Library/Artificial-Intelligence-Terminology-Database)**: 一个由社区驱动的、全面的中英人工智能术语库。
+
+我们在 `create_ai_glossary.py` 脚本中处理该数据，以生成项目所需的 `ai_terminology_glossary.json` 文件，从而极大地提升了字幕中专业词汇的翻译准确性。 
