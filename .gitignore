@@ -41,4 +41,8 @@ Artificial-Intelligence-Terminology-Database/
 /dist/
 /build/
 *.egg-info/
-.eggs/ 
+.eggs/
+
+# 忽略编辑器目录
+# --------------------
+/.cursor/ 
