@@ -1,98 +1,100 @@
-# SRT 字幕翻译工具
+# 智译字幕通 (IntelliSubs) - AI 字幕翻译工具
 
-这是一个 Python 脚本，可以使用兼容 OpenAI 格式的 API，将英文 SRT 字幕文件（`.srt`）自动翻译成中文。脚本会保留原始的时间轴，只翻译字幕文本内容。
+**智译字幕通 (IntelliSubs)** 是一款免费、开源的AI字幕翻译工具，旨在为人工智能、科技和教育领域的视频内容提供高质量、高效率的翻译解决方案。
 
-## 功能
-
--   解析 SRT 文件格式。
--   逐条将英文字幕文本发送到 API 进行翻译。
--   保留原始字幕的时间码。
--   生成一个新的、包含中文翻译的 SRT 文件。
-
-## 环境准备
-
-1.  **Python 3**: 确保您的系统中已经安装了 Python 3。
-    -   您可以从 [python.org](https://www.python.org/downloads/) 下载并安装。
-
-## 设置步骤
-
-1.  **下载代码**:
-    将本项目的所有文件（`translate_srt.py`, `requirements.txt`）下载到您的本地文件夹中。
-
-2.  **创建虚拟环境 (推荐)**:
-    在项目文件夹中打开终端，运行以下命令来创建一个虚拟环境。这可以避免不同项目间的库依赖冲突。
-    ```bash
-    python3 -m venv venv
-    ```
-    激活虚拟环境：
-    -   **macOS / Linux**: `source venv/bin/activate`
-    -   **Windows**: `.\venv\Scripts\activate`
-
-3.  **安装依赖**:
-    在激活虚拟环境的终端中，运行以下命令来安装所有必需的库：
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **配置 API 密钥**:
-    项目提供了一个环境文件模板 `.env.example`。请将其复制一份并重命名为 `.env`：
-    ```bash
-    cp .env.example .env
-    ```
-    然后，打开新的 `.env` 文件，根据其中的中文注释填入您自己的 API 密钥和自定义配置。
-
-## 如何使用
-
-### 1. (可选) 测试 API 连接
-
-在开始翻译前，建议先运行测试脚本，确保您的 API 配置和网络都正常。
-```bash
-python test_api.py
-```
-如果脚本成功输出 "连接成功！"，说明您的配置无误。如果报错，请根据错误提示检查您的 `.env` 文件和网络设置。
-
-### 2. 运行翻译
-
-将您需要翻译的 `.srt` 字幕文件放入项目文件夹中（例如 `my_movie.srt`）。
-
-打开终端，并确保您已经激活了虚拟环境。运行翻译脚本：
-```bash
-python translate_srt.py my_movie.srt
-```
-
-脚本会开始逐条翻译字幕。翻译完成后，您会在同一个文件夹下看到一个名为 `my_movie_cn.srt` 的新文件，这就是翻译好的中文字幕文件。
-
-### 自定义输出文件名
-
-如果您想指定输出文件的名称或路径，可以使用 `-o` 或 `--output_file` 参数：
-```bash
-python translate_srt.py my_movie.srt -o /path/to/your/translated_subtitle.srt
-```
-
-### 自定义模型及参数
-
-您可以在运行时通过命令行参数，或在 `.env` 文件中设置默认值，来配置翻译时使用的模型及参数。
-
-**通过命令行参数配置 (运行时生效):**
-
--   **模型**: 使用 `-m` 或 `--model` 参数来指定模型，例如 `gpt-4o`。
-    ```bash
-    python translate_srt.py my_movie.srt -m gpt-4o
-    ```
--   **温度 (Temperature)**: 使用 `-t` 或 `--temperature` 参数来调整翻译的随机性 (0.0 到 2.0 之间)。值越高，翻译越有创造性；值越低，翻译越固定。
-    ```bash
-    python translate_srt.py my_movie.srt -t 0.5
-    ```
-
-**通过 `.env` 文件配置 (设置默认值):**
-
-您可以在 `.env` 文件中设置 `DEFAULT_MODEL` 和 `DEFAULT_TEMPERATURE` 来更改脚本的默认行为，这样就不必每次都输入命令行参数。
-
-现在，您可以开始使用了！
+本项目使用Python开发，支持批量翻译SRT格式的字幕文件，并创新性地集成了可定制的AI专业术语库，确保专有名词和技术词汇的翻译准确性。无论您是内容创作者、课程制作者还是语言学习者，智译字幕通都能帮助您轻松打破语言障碍，让优质内容无国界传播。
 
 ---
 
-## 致谢 (Acknowledgements)
+## ✨ 核心功能
+
+-   **精准的 AI 翻译**: 对接兼容 OpenAI 格式的各大模型 API，提供高质量的翻译结果。
+-   **智能术语库**: 自带AI领域专业术语库，并支持用户自定义，确保专有名词翻译的准确性和一致性。
+-   **批量处理**: 支持一次性翻译文件夹内的所有 `.srt` 字幕文件，极大提升效率。
+-   **时间码保留**: 完美保留原始字幕的起止时间，只对文本内容进行翻译。
+-   **高度可配置**: 支持通过命令行参数或 `.env` 文件自定义翻译模型、温度等参数。
+
+---
+
+## 🚀 快速开始
+
+### 1. 环境准备
+确保您的系统中已经安装了 Python 3。
+```bash
+# 从官网下载：https://www.python.org/downloads/
+```
+
+### 2. 下载与安装
+```bash
+# 1. 克隆或下载项目代码
+git clone https://github.com/HuangYuChuh/IntelliSubs.git
+cd IntelliSubs
+
+# 2. 创建并激活虚拟环境 (推荐)
+python3 -m venv venv
+# macOS / Linux
+source venv/bin/activate
+# Windows
+# .\venv\Scripts\activate
+
+# 3. 安装依赖库
+pip install -r requirements.txt
+```
+
+### 3. 参数配置
+```bash
+# 1. 复制环境文件模板
+cp .env.example .env
+
+# 2. 编辑 .env 文件，填入您的 API Key 和 Base URL
+# OPENAI_API_KEY="sk-..."
+# OPENAI_API_BASE="https://api.openai.com/v1"
+```
+
+### 4. (可选) 生成AI术语库
+本项目依赖一个外部的AI术语库。请先完成以下步骤来生成本地的术语表 `ai_terminology_glossary.json`。
+```bash
+# 1. 克隆AI术语库项目
+git clone https://github.com/Social-Library/Artificial-Intelligence-Terminology-Database.git
+
+# 2. 运行脚本生成本地术语表
+python create_ai_glossary.py
+```
+
+### 5. 执行翻译
+```bash
+# (可选) 测试 API 是否连通
+python test_api.py
+
+# 翻译单个文件
+python translate_srt.py your_subtitle.srt
+
+# 批量翻译一个文件夹内的所有 srt 文件
+python translate_srt_batch.py /path/to/your/subtitle_folder
+```
+翻译完成后，您会在同一个文件夹下看到一个名为 `*_cn.srt` 的新文件。
+
+---
+
+## 🎯 路线图 (Roadmap)
+
+我们正在积极地改进项目，以下是近期的开发计划：
+
+### 核心优化
+- [ ] **优化字幕对齐与完整性**: 解决翻译后字幕行数可能减少导致时间轴错位的问题。确保翻译后的字幕条目数与原文100%匹配。
+- [ ] **清理冗余文件与脚本**: 移除翻译过程中产生的临时文件，并考虑将核心修复逻辑整合到主脚本中，简化项目结构。
+
+### 功能与体验增强
+- [ ] **扩充专业术语词典**: 持续将新的AI领域术语（如 `Cursor`, `Perplexity`）添加到术语库中。
+- [ ] **评估并合并翻译脚本**: 考虑将 `translate_srt.py` 的功能合并到 `translate_srt_batch.py` 中，提供单一、更强大的执行入口。
+
+### 未来规划
+- [ ] **支持更多字幕格式**: 增加对 `.vtt`, `.ass` 等常见字幕格式的翻译支持。
+- [ ] **开发图形用户界面 (GUI)**: 创建一个简单的图形界面，让非技术用户也能轻松使用。
+
+---
+
+## 🙏 致谢 (Acknowledgements)
 
 本项目的AI专业术语库功能，其数据源自于以下优秀的开源项目，特此感谢：
 
